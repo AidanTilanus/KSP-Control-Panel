@@ -94,8 +94,7 @@ def write_screen(image):
                     y = page * 8 + bit
                     if image.getpixel((x, y)):
                         byte |= (1 << bit)
-                byte = ~byte & 0xFF
                 send_data(byte)
         
 def clear_screen():
-    write_screen(Image.new('1', (128, 64), 1))
+    write_screen(Image.new('1', (128, 64), 0))

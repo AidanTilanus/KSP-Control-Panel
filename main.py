@@ -17,7 +17,7 @@ if __name__ == "__main__":
     display.init()
     #display.clear_screen()
     
-    display.write_screen(Image.open('assets/logo_screen.png').convert('1')) #TODO - Do this in the correct place!
+    display.write_screen(Image.open('assets/logo_screen.png').convert('1')) #TODO - Do this in the correct place! and make it colored correctly
     
     connected = ksp_client.connect()
     if not connected:
@@ -44,6 +44,9 @@ if __name__ == "__main__":
         telemetry = {
             "apoapsis": ksp_client.apoapsis_stream(),
             "periapsis": ksp_client.periapsis_stream(),
+            "eccentricity": ksp_client.eccentricity_stream(),
+            "semi_major_axis": ksp_client.sem_major_axis_stream(),
+            "body": ksp_client.body_stream(),
             "altitude": ksp_client.altitude_stream()
         }
         

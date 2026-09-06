@@ -1,0 +1,56 @@
+{
+	"$baseURI": "https://yal.cc/r/20/pixelfont/",
+	"$version": "1.0",
+	"in-glyphs": [
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+		"0123456789:()!?-+±*Δ^/\\°μ "
+	],
+	"glyph-color": "auto",
+	"glyph-width": 3,
+	"glyph-height": 5,
+	"glyph-ofs-x": 1,
+	"glyph-ofs-y": 1,
+	"glyph-sep-x": 1,
+	"glyph-sep-y": 1,
+	"glyph-base-x": 0,
+	"glyph-baseline": 5,
+	"glyph-spacing": 1,
+	"font-is-mono": true,
+	"font-em-square": 640,
+	"font-line-gap": 0,
+	"font-ascend": 640,
+	"font-descend": 0,
+	"font-px-size": 128,
+	"contour-type": "pixel",
+	"font-type": "ttf",
+	"font-is-upper": true,
+	"font-name": "KSP Controller",
+	"font-style": "Regular",
+	"font-author": "Aidan Tilanus",
+	"font-copy": "",
+	"font-version-major": 1,
+	"font-version-minor": 0,
+	"font-desc": "KSP",
+	"font-license": "",
+	"font-license-url": "",
+	"font-sample-text": [
+		"Kerbal Space Program"
+	],
+	"font-embedding": "4",
+	"font-weight-class": "400",
+	"font-width-class": "5",
+	"font-creation-date": "2026-09-05",
+	"font-creation-time": "17:24",
+	"font-modification-date": "2026-09-05",
+	"font-modification-time": "18:01",
+	"font-modification-auto": true,
+	"overrides": [
+		"# hide the pixels of the \"space\" characters!",
+		"# (but they'll still have a width)",
+		"hide \\s",
+		""
+	],
+	"font-preview-text": [
+		"Kerbal Space Program!"
+	]
+}
