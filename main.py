@@ -8,13 +8,14 @@ import ksp_client
 import vessel_watcher
 import actions
 import display
+import hud
 
 if __name__ == "__main__":
     #SECTION - start client and control
     
     controls.setup_controls()
     display.init()
-    display.clear_screen()
+    #display.clear_screen()
     
     display.write_screen(Image.open('assets/logo_screen.png').convert('1')) #TODO - Do this in the correct place!
     
@@ -40,4 +41,11 @@ if __name__ == "__main__":
     #SECTION - MAIN LOOP
     
     while True:
-        print(ksp_client.apoapsis_stream(), ksp_client.periapsis_stream(), ksp_client.altitude_stream())
+        telemetry = {
+            "apoapsis": ksp_client.apoapsis_stream(),
+            "periapsis": ksp_client.periapsis_stream(),
+            "altitude": ksp_client.altitude_stream()
+        }
+        
+        image = hud.render(telemetry)
+        display.write_screen(image.convert('1'))

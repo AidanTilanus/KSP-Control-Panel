@@ -2,7 +2,7 @@ import krpc
 
 from time import sleep
 
-def watch_vessel(conn, refresh_vessel, get_vessel):
+def watch_vessel(conn, refresh_vessel):
     last_name = None
     while True:
         try:
