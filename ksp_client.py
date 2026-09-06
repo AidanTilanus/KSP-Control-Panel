@@ -32,6 +32,7 @@ def connect():
         conn = krpc.connect(name='RPI2', address=ADDRESS, rpc_port=RPC_PORT, stream_port=STREAM_PORT)
         setup_vessel()
         return True
-    except ConnectionRefusedError:
+    except Exception as e:
         print("Could not connect to kRPC — is KSP running with the server started?")
+        print(e)
         return False

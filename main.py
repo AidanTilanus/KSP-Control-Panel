@@ -19,6 +19,10 @@ if __name__ == "__main__":
     display.write_screen(Image.open('assets/logo_screen.png').convert('1')) #TODO - Do this in the correct place!
     
     connected = ksp_client.connect()
+    if not connected:
+        exit(1)
+    
+    print("Connected to kRPC")
     ksp_client.setup_streams()
     
     #SECTION - Setup Actions
@@ -29,7 +33,7 @@ if __name__ == "__main__":
     
     threading.Thread(
         target=vessel_watcher.watch_vessel,
-        args=(ksp_client.conn, ksp_client.setup_vessel, lambda: ksp_client.vessel),
+        args=(ksp_client.conn, ksp_client.setup_vessel),
         daemon=True
     ).start()
     
