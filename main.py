@@ -1,4 +1,5 @@
 import threading
+import math
 
 from signal import pause
 from PIL import Image
@@ -45,10 +46,13 @@ if __name__ == "__main__":
             "apoapsis": ksp_client.apoapsis_stream(),
             "periapsis": ksp_client.periapsis_stream(),
             "eccentricity": ksp_client.eccentricity_stream(),
-            "semi_major_axis": ksp_client.sem_major_axis_stream(),
+            "semi_major_axis": ksp_client.semi_major_axis_stream(),
+            "inclination": math.degrees(ksp_client.inclination_stream()),
             "body": ksp_client.body_stream(),
             "altitude": ksp_client.altitude_stream()
         }
+        
+        print(f"Telemetry: {telemetry}")
         
         image = hud.render(telemetry)
         display.write_screen(image.convert('1'))

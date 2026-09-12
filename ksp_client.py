@@ -16,13 +16,15 @@ def setup_vessel():
 apoapsis_stream = None
 periapsis_stream = None
 eccentricity_stream = None
-sem_major_axis_stream = None
+semi_major_axis_stream = None
+inclination_stream = None
 body_stream = None
 
 altitude_stream = None
 
 def setup_streams():
-    global vessel, control, apoapsis_stream, periapsis_stream, eccentricity_stream, sem_major_axis_stream, body_stream
+    global vessel, control, apoapsis_stream, periapsis_stream, eccentricity_stream, semi_major_axis_stream, inclination_stream
+    global body_stream
     global altitude_stream
 
     apoapsis_stream = conn.add_stream(getattr, vessel.orbit, 'apoapsis_altitude')
@@ -31,8 +33,11 @@ def setup_streams():
     periapsis_stream.rate = 5
     eccentricity_stream = conn.add_stream(getattr, vessel.orbit, 'eccentricity')
     eccentricity_stream.rate = 5
-    sem_major_axis_stream = conn.add_stream(getattr, vessel.orbit, 'semi_major_axis')
-    sem_major_axis_stream.rate = 5
+    semi_major_axis_stream = conn.add_stream(getattr, vessel.orbit, 'semi_major_axis')
+    semi_major_axis_stream.rate = 5
+    inclination_stream = conn.add_stream(getattr, vessel.orbit, 'inclination')
+    inclination_stream.rate = 5
+    
     body_stream = conn.add_stream(getattr, vessel.orbit, 'body')
     body_stream.rate = 0.2
     
